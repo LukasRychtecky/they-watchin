@@ -12,9 +12,9 @@ class App
     @server.get '/', (req, res) ->
       res.send 'They watchin!'
 
-    @server.post '/store', (req, res) ->
+    @server.get '/store', (req, res) ->
       ctrl = new WatchController db, req
-      ctrl.store()
-      res.send 201
+      ctrl.store(req.url)
+      res.send 200
 
 module.exports = App
