@@ -1,15 +1,11 @@
 module.exports = (grunt) ->
 
   coffeeScripts = [
-#    'bower_components/este-library/**/*.coffee'
-#    '!bower_components/este-library/Gruntfile.coffee'
-#    '!bower_components/este-library/node_modules/**/*.coffee'
     'client/**/*.coffee'
   ]
 
   clientDirs = [
     'bower_components/closure-library'
-#    'bower_components/este-library'
     'client'
   ]
 
@@ -88,8 +84,8 @@ module.exports = (grunt) ->
 
       app:
         options:
-          namespace: 'app.start'
-          outputFilePath: 'client/spot.js'
+          namespace: 'tw.start'
+          outputFilePath: 'pub/spot.js'
 
     esteUnitTests:
       options:
@@ -151,7 +147,6 @@ module.exports = (grunt) ->
       "esteUnitTests:#{app}"
     ]
     if grunt.option 'stage'
-      tasks.push "cssmin:#{app}"
       tasks.push "esteBuilder:#{app}"
     grunt.task.run tasks
 
