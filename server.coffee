@@ -4,8 +4,7 @@ connect = require 'connect'
 
 App = require './src/App'
 
-server = express.createServer express.logger()
-
+server = express()
 mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/they-watchin'
 
 mongodb.Db.connect mongoUri, (err, db) ->
@@ -15,5 +14,7 @@ mongodb.Db.connect mongoUri, (err, db) ->
   app.start()
 
 port = process.env.PORT || 5000
+server.use '/pub', express.static(__dirname + '/pub')
+server.use '/bower_components', express.static(__dirname + '/bower_components')
 server.listen port
 server.use connect.bodyParser()
