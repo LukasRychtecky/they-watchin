@@ -4,6 +4,7 @@
 	"dependencies" : {
 		"closure-library": "git://github.com/Steida/google-closure-library.git",
 		"closure-compiler": "http://closure-compiler.googlecode.com/files/compiler-latest.zip",
-		"este-library": "git://github.com/Steida/este-library.git"
+		"este-library": "git://github.com/Steida/este-library.git",
+		"heatmap": "git://github.com/LukasRychtecky/heatmap.git"
 	}
 }

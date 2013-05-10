@@ -6,6 +6,7 @@ module.exports = (grunt) ->
 
   clientDirs = [
     'bower_components/closure-library'
+    'bower_components/heatmap/src'
     'client'
   ]
 
