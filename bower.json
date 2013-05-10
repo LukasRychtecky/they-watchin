@@ -1,0 +1,9 @@
+{
+	"name": "they-watchin-client",
+	"version": "0.0.1",
+	"dependencies" : {
+		"closure-library": "git://github.com/Steida/google-closure-library.git",
+		"closure-compiler": "http://closure-compiler.googlecode.com/files/compiler-latest.zip",
+		"este-library": "git://github.com/Steida/este-library.git"
+	}
+}

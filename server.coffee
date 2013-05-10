@@ -15,5 +15,6 @@ mongodb.Db.connect mongoUri, (err, db) ->
 
 port = process.env.PORT || 5000
 server.use '/pub', express.static(__dirname + '/pub')
+server.use '/bower_components', express.static(__dirname + '/bower_components')
 server.listen port
 server.use connect.bodyParser()

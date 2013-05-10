@@ -11,5 +11,14 @@
 	"engines": {
 		"node": "0.10.*",
 		"npm": "1.2.*"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-clean": "~0.4.1",
+		"grunt-contrib-coffee": "~0.7.0",
+		"grunt-contrib-jshint": "~0.4.3",
+		"grunt-contrib-watch": "~0.4.2",
+		"grunt-este": "~0.4.0",
+		"grunt-coffeelint": "0.0.6"
 	}
 }
