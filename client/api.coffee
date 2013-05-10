@@ -29,6 +29,6 @@ tw.start = (dom, host) ->
       spot[key] = e[key]
 
     data = goog.Uri.QueryData.createFromMap new goog.structs.Map(spot)
-    goog.net.XhrIo.send url, responseHandler, "POST", data.toString()
+    goog.net.XhrIo.send "#{url}?#{data}", responseHandler, "GET"
 
 goog.exportSymbol 'tw.start', tw.start
