@@ -20,7 +20,6 @@ tw.start = (win, host) ->
   goog.events.listen win.document.body, goog.events.EventType.CLICK, (e) ->
 
     spot =
-      "baseURI": e.target.baseURI
       "tagName": e.target.tagName
       "className": e.target.className
       "targetId": e.target.id
