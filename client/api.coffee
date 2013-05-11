@@ -8,6 +8,7 @@ goog.require 'heatmap'
 goog.require 'goog.style'
 goog.require 'goog.net.Jsonp'
 goog.require 'goog.ui.KeyboardShortcutHandler'
+goog.require 'goog.date.DateTime'
 
 ###*
   @param {Window} win
@@ -27,6 +28,7 @@ tw.start = (win, host) ->
       "bodyOffsetWidth": win.document.body.offsetWidth
       "bodyOffsetLeft": goog.style.getPageOffsetLeft win.document.body
       "bodyOffsetTop": goog.style.getPageOffsetTop win.document.body
+      "created": new goog.date.DateTime().toIsoString()
 
     for key in ['clientX', 'clientY', 'offsetX', 'offsetY', 'screenX', 'screenY', 'type']
       spot[key] = e[key]
