@@ -3,14 +3,19 @@ urlParser = require 'url'
 
 class WatchController
 
+  ###*
+    @type {Array.<Object>}
+  ###
+  @spots: null
+
   constructor: (@db, @req, @res) ->
     @spots = new mongodb.Collection @db, 'spot'
 
   store: (url) ->
     parsed = urlParser.parse url, true
     spot = parsed.query
-    pos = spot.baseURI.indexOf '://'
-    spot.baseURI = spot.baseURI.substr(pos + 3) if pos > -1
+    pos = @req.headers.referer.indexOf '://'
+    spot.uri = @req.headers.referer.substr(pos + 3) if pos > -1
 
     @spots.insert spot, safe: true, (err, inserted) ->
 
@@ -18,7 +23,7 @@ class WatchController
     parsed = urlParser.parse url, true
     domain = parsed.query['domain']
 
-    cur = @spots.find baseURI: domain
+    cur = @spots.find uri: domain
 
     mapData = []
     res = @res
