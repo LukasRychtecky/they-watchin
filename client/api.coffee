@@ -19,14 +19,14 @@ tw.start = (win, host) ->
   goog.events.listen win.document.body, goog.events.EventType.CLICK, (e) ->
 
     spot =
-      baseURI: e.target.baseURI
-      tagName: e.target.tagName
-      className: e.target.className
-      targetId: e.target.id
-      bodyOffsetHeight: win.document.body.offsetHeight
-      bodyOffsetWidth: win.document.body.offsetWidth
-      bodyOffsetLeft: goog.style.getPageOffsetLeft win.document.body
-      bodyOffsetTop: goog.style.getPageOffsetTop win.document.body
+      "baseURI": e.target.baseURI
+      "tagName": e.target.tagName
+      "className": e.target.className
+      "targetId": e.target.id
+      "bodyOffsetHeight": win.document.body.offsetHeight
+      "bodyOffsetWidth": win.document.body.offsetWidth
+      "bodyOffsetLeft": goog.style.getPageOffsetLeft win.document.body
+      "bodyOffsetTop": goog.style.getPageOffsetTop win.document.body
 
     for key in ['clientX', 'clientY', 'offsetX', 'offsetY', 'screenX', 'screenY', 'type']
       spot[key] = e[key]
